@@ -1,5 +1,7 @@
 docs in configs in docs ?
--- we all only want the 'D'
+
+-- we all only really want the 'D'
+
 D = {
  show = [
     '#quickstart'
