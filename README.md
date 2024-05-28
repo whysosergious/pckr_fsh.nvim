@@ -1,7 +1,7 @@
 docs in configs in docs ?
 
 -- we all only really want the 'D'
-
+-- was thinking how it would feel to hide documentation inside the code (folding, brute and other)
 D = {
  show = [
     '#quickstart'
