@@ -1,3 +1,15 @@
+docs in configs in docs ?
+-- we all only want the 'D'
+D = {
+ show = [
+    '#quickstart'
+    ],
+ hidden = ['*']
+}
+    
+
+
+return function ()  
 # pckr.nvim
 
 Spiritual successor of https://github.com/wbthomason/packer.nvim
@@ -41,7 +53,7 @@ Main differences to pckr.nvim:
 If you want to automatically install and set up `pckr.nvim` on any machine you clone your configuration to,
 add the following snippet somewhere in your config **before** your first usage of `pckr`:
 
-```lua
+```lua --#quickstart
 local function bootstrap_pckr()
   local pckr_path = vim.fn.stdpath("data") .. "/pckr/pckr.nvim"
 
@@ -68,7 +80,7 @@ require('pckr').add{
 ```
 
 ## Example
-```lua
+```lua --#example
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 local cmd = require('pckr.loader.cmd')
@@ -132,7 +144,7 @@ require('pckr').add{
 ## Commands
 `pckr` provides the following commands.
 
-```vim
+```vim --#commands
 " Remove any disabled or unused plugins
 :Pckr clean
 
@@ -170,7 +182,7 @@ where `spec` is a table specifying a single or multiple plugins.
 `pckr.setup()` can be used to provide custom configuration (note that this is optional).
 The default configuration values (and structure of the configuration table) are:
 
-```lua
+```lua  --#defauls
 require('pckr').setup{
   package_root        = util.join_paths(vim.fn.stdpath('data'), 'site', 'pack'),
   max_jobs            = nil, -- Limit the number of simultaneous jobs. nil means no limit
@@ -278,7 +290,7 @@ When this function argument is called, the plugin is loaded.
 
 For example, the following plugin is lazy-loaded on the key mapping `ga`:
 
-```lua
+```lua --#snippet
 pckr.add{
   {"my/plugin", cond = function(load_plugin)
     vim.keymap.set('n', 'ga', function()
@@ -301,7 +313,7 @@ pckr.add{
 
 This snippet can be used to automatically detect local plugins in a particular directory.
 
-```lua
+```lua --#snippet
 local local_plugin_dir = vim.env.HOME..'/projects/'
 
 local function resolve(x)
@@ -349,4 +361,3 @@ require('pckr').add(init)
 ## Debugging
 `pckr.nvim` logs to `stdpath(cache)/pckr.nvim.log`. Looking at this file is usually a good start
 if something isn't working as expected.
-
